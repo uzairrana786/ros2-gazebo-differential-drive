@@ -1,0 +1,15 @@
+# ROS 2 build directories (if workspace root is tracked)
+build/
+install/
+log/
+
+# Python compiled files
+__pycache__/
+*.pyc
+
+# IDE / Editor configs
+.vscode/
+.idea/
+
+# OS specific files
+.DS_Store
