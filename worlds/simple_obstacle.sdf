@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<sdf version="1.8">
+  <world name="obstacle_world">
+    <!-- 1. Stage Rules (Physics & Plugins) -->
+    <physics name="1ms" type="ignored">
+    <max_step_size>0.001</max_step_size>
+    <real_time_factor>1</real_time_factor>
+    </physics>
+
+
+    <!-- Required Gazebo Plugins -->
+
+    <plugin filename="libgz-sim-physics-system.so" name="gz::sim::systems::Physics"/>
+    <plugin filename="libgz-sim-user-commands-system.so" name="gz::sim::systems::UserCommands"/>
+    <plugin filename="libgz-sim-scene-broadcaster-system.so" name="gz::sim::systems::SceneBroadcaster"/>
+    <plugin filename="libgz-sim-sensors-system.so" name="gz::sim::systems::Sensors">
+        <render_engine>ogre2</render_engine>
+    </plugin>
+
+
+
+
+    <!-- 2. Stage Lighting (Sun) -->
+
+    <light type="directional" name="sun">
+    <cast_shadows>true</cast_shadows>
+    <pose>0 0 10 0 0 0</pose>
+    <diffuse>0.8 0.8 0.8 1</diffuse>
+    <specular>0.2 0.2 0.2 1</specular>
+    <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+
+
+    <!-- 3. Stage Floor (Ground Plane) -->
+
+    <model name="ground_plane">
+        <static>true</static>  <!-- Keeps ground fixed in space (unaffected by gravity) -->
+        <link name="link">
+    
+            <!-- 1. Physical Collision Surface -->
+            <collision name="collision">
+            <geometry>
+                <plane>
+                    <normal>0 0 1</normal>  <!-- Points straight up along Z-axis -->
+                    <size>100 100</size>    <!-- 100 meters by 100 meters -->
+                </plane>
+            </geometry>
+            </collision>
+
+            <!-- 2. Visual Render Surface -->
+            <visual name="visual">
+                <geometry>
+                    <plane>
+                        <normal>0 0 1</normal>
+                        <size>100 100</size>
+                    </plane>
+                </geometry>
+                <material>
+                    <ambient>0.8 0.8 0.8 1</ambient>  <!-- Surface color under ambient light -->
+                    <diffuse>0.8 0.8 0.8 1</diffuse>
+                </material>
+            </visual>
+
+        </link>
+    </model>
+
+
+     
+    
+    <!-- 4. Stage Props (Obstacles) -->
+
+    <!-- Obstacle Box 1 -->
+    <model name="box_obstacle_1">
+        <static>true</static>
+        <pose>2.0 0.5 0.5 0 0 0</pose>  <!-- X=2.0m forward, Y=0.5m left, Z=0.5m up -->
+        <link name="link">
+            <collision name="collision">
+                <geometry>
+                    <box>
+                        <size>0.8 0.8 1</size>  <!-- Width=0.8m, Length=0.8m, Height=1.0m -->
+                    </box>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <box>
+                        <size>0.8 0.8 1</size>
+                    </box>
+                </geometry>
+                <material>
+                    <ambient>1 0.3 0.3 1</ambient>  <!-- Red Color (1.0 Red, 0.3 Green, 0.3 Blue) -->
+                    <diffuse>1 0.3 0.3 1</diffuse>
+                </material>
+            </visual>
+        </link>
+    </model>
+
+
+    <!-- Obstacle Box 2 -->
+    <model name="box_obstacle_2">
+        <static>true</static>
+        <pose>-1.5 -0.5 0.5 0 0 0</pose>  <!-- X=-1.5m backward, Y=-0.5m right, Z=0.5m up -->
+        <link name="link">
+            <collision name="collision">
+                <geometry>
+                    <box>
+                        <size>1 1 1</size>  <!-- Width=1.0m, Length=1.0m, Height=1.0m -->
+                    </box>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <box>
+                        <size>1 1 1</size>
+                    </box>
+                </geometry>
+                <material>
+                    <ambient>0.3 0.3 1 1</ambient>  <!-- Blue Color (0.3 Red, 0.3 Green, 1.0 Blue) -->
+                    <diffuse>0.3 0.3 1 1</diffuse>
+                </material>
+            </visual>
+        </link>
+    </model>
+  </world>
+
+</sdf>
