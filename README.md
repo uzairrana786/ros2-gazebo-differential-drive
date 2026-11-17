@@ -1,6 +1,11 @@
 # ROS 2 Differential Drive Robot Simulation using Gazebo
 
-**Tags:** `ros2` `ros2-jazzy` `gazebo-harmonic` `differential-drive` `urdf` `xacro` `robotics-simulation` `ros-gz-bridge` `mobile-robotics`
+**Tags:** ![ROS 2 Jazzy](https://img.shields.io/badge/ROS_2-Jazzy-22314E?style=for-the-badge&logo=ros&logoColor=white)
+![Gazebo Harmonic](https://img.shields.io/badge/Gazebo-Harmonic-FF6600?style=for-the-badge&logo=gazebo&logoColor=white)
+![Ubuntu 24.04](https://img.shields.io/badge/Ubuntu-24.04_Noble-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![URDF Xacro](https://img.shields.io/badge/Model-URDF_%2F_Xacro-007ACC?style=for-the-badge&logo=xml&logoColor=white)
+![License](https://img.shields.io/badge/License-Apache_2.0-green?style=for-the-badge)
 
 ## Purpose & Learning Goals
 
