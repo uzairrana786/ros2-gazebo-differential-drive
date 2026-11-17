@@ -1,11 +1,11 @@
 # ROS 2 Differential Drive Robot Simulation using Gazebo
 
-**Tags:** ![ROS 2 Jazzy](https://img.shields.io/badge/ROS_2-Jazzy-22314E?style=for-the-badge&logo=ros&logoColor=white)
-![Gazebo Harmonic](https://img.shields.io/badge/Gazebo-Harmonic-FF6600?style=for-the-badge&logo=gazebo&logoColor=white)
-![Ubuntu 24.04](https://img.shields.io/badge/Ubuntu-24.04_Noble-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![URDF Xacro](https://img.shields.io/badge/Model-URDF_%2F_Xacro-007ACC?style=for-the-badge&logo=xml&logoColor=white)
-![License](https://img.shields.io/badge/License-Apache_2.0-green?style=for-the-badge)
+![ROS 2 Jazzy](https://img.shields.io/badge/ROS_2-Jazzy-22314E?style=for-the-badge&logo=ros&logoColor=white&labelColor=22314E)
+![Gazebo Harmonic](https://img.shields.io/badge/Gazebo-Harmonic-FF6600?style=for-the-badge&logo=gazebo&logoColor=white&labelColor=FF6600)
+![Ubuntu 24.04](https://img.shields.io/badge/Ubuntu-24.04_Noble-E95420?style=for-the-badge&logo=ubuntu&logoColor=white&labelColor=E95420)
+![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white&labelColor=3776AB)
+![URDF Xacro](https://img.shields.io/badge/Model-URDF_%2F_Xacro-007ACC?style=for-the-badge&logo=xml&logoColor=white&labelColor=007ACC)
+![License](https://img.shields.io/badge/License-Apache_2.0-D22128?style=for-the-badge&logo=apache&logoColor=white&labelColor=D22128)
 
 ## Purpose & Learning Goals
 
@@ -64,6 +64,11 @@ my_diff_bot/
 
 ```
 
+## How It Works
+- **`urdf/robot.urdf.xacro`**: Defines the chassis, caster wheel, and two actuated drive wheels, along with Gazebo's `DiffDrive` plugin to compute wheel kinematics and odometry.
+- **`worlds/simple_obstacle.sdf`**: Sets up the ground plane, lighting, physics engine, and static box obstacles.
+- **`launch/sim_robot.launch.py`**: Orchestrates the full stack—starts Gazebo Harmonic, publishes the robot's TF tree via `robot_state_publisher`, spawns the URDF model, and bridges `/cmd_vel`, `/odom`, and `/clock` via `ros_gz_bridge`.
+
 ## How to Build & Run
 
 Open your **Ubuntu (Linux) or WSL2 terminal** before running the commands below.
@@ -108,8 +113,13 @@ Use `i` (forward), `j` (left), `l` (right), `,` (reverse), and `k` (stop) to dri
 
 ### Demo & Screenshots
 
-*(Add your screenshots or demo GIF/video in a `media/` folder and link them below)*
+Demo material will be uploaded soon.
 
 ## Next Steps
 
 Now that the locomotion and ROS-Gazebo bridge baseline is working, I am building a separate follow-up repository on top of this base to add a **2D LiDAR sensor**, visualize laser scans in **RViz2**, and work toward **SLAM** and autonomous navigation.
+
+---
+
+## Feedback & Suggestions
+Since this is an active learning project, any suggestions for improvements, best practices, or guidance on where to take this next are always welcome. Feel free to open an issue or reach out!
