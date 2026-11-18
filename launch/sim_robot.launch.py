@@ -58,10 +58,21 @@ def generate_launch_description():
         package='ros_gz_bridge',
         executable='parameter_bridge',
         arguments=[
-            '/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist',
-            '/odom@nav_msgs/msg/Odometry@gz.msgs.Odometry',
+            '/cmd_vel@geometry_msgs/msg/Twist]gz.msgs.Twist',
+            '/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry',
             '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock',
+            '/joint_states@sensor_msgs/msg/JointState[gz.msgs.Model',
+            '/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V',
         ],
+        output='screen',
+    )
+
+
+    rviz = Node(
+        package='rviz2',
+        executable='rviz2',
+        arguments=['-d', os.path.join(pkg_share, 'rviz', 'sim.rviz')],
+        parameters=[{'use_sim_time': True}],
         output='screen',
     )
 
@@ -70,4 +81,5 @@ def generate_launch_description():
         robot_state_publisher,
         spawn_robot,
         bridge,
+        rviz,
     ])

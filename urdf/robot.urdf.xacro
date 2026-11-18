@@ -129,8 +129,17 @@
             <odom_publish_frequency>30</odom_publish_frequency>
             <topic>cmd_vel</topic>
             <odom_topic>odom</odom_topic>
+            <tf_topic>tf</tf_topic>
             <frame_id>odom</frame_id>
             <child_frame_id>base_link</child_frame_id>
+        </plugin>
+    </gazebo>
+
+
+    <!-- ======= Gazebo Joint States Publisher Plugin ======= -->
+    <gazebo>
+        <plugin name="gz::sim::systems::JointStatePublisher" filename="libgz-sim-joint-state-publisher-system.so">
+            <topic>joint_states</topic>
         </plugin>
     </gazebo>
 
