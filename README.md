@@ -1,6 +1,7 @@
 # ROS 2 Differential Drive Robot Simulation using Gazebo
 
 ![ROS 2 Jazzy](https://img.shields.io/badge/ROS_2-Jazzy-22314E?style=for-the-badge&logo=ros&logoColor=white&labelColor=22314E)
+![RViz2](https://img.shields.io/badge/RViz2-Visualization-2C6E9B?style=for-the-badge&logo=ros&logoColor=white&labelColor=2C6E9B)
 ![Gazebo Harmonic](https://img.shields.io/badge/Gazebo-Harmonic-FF6600?style=for-the-badge&logo=gazebo&logoColor=white&labelColor=FF6600)
 ![Ubuntu 24.04](https://img.shields.io/badge/Ubuntu-24.04_Noble-E95420?style=for-the-badge&logo=ubuntu&logoColor=white&labelColor=E95420)
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white&labelColor=3776AB)

@@ -53,7 +53,7 @@ def generate_launch_description():
         output='screen',
     )
 
-    # 5. ROS-Gazebo Bridge (connects /cmd_vel, /odom, and /clock)
+    # 5. ROS-Gazebo Bridge (connects /cmd_vel, /odom, /clock, /tf and /joint_states)
     bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
@@ -67,7 +67,7 @@ def generate_launch_description():
         output='screen',
     )
 
-
+    # 6. RViz2 with the saved configuration
     rviz = Node(
         package='rviz2',
         executable='rviz2',

@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>my_diff_bot</name>
-  <version>0.1.0</version>
+  <version>0.2.0</version>
   <description>Differential-drive mobile robot simulated in Gazebo Harmonic with ROS 2 Jazzy, with ROS-Gazebo bridging for teleoperation, odometry and TF, visualised in RViz2</description>
   <maintainer email="uzairrana786@users.noreply.github.com">Muhammad Uzair Rana</maintainer>
   <license>Apache-2.0</license>
